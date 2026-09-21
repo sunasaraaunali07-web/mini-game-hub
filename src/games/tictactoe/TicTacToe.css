@@ -1,0 +1,146 @@
+/* =========================================================
+   TIC-TAC-TOE STYLES
+   ========================================================= */
+
+.tictactoe-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 440px;
+  margin: 0 auto;
+}
+
+.game-status-banner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.25rem;
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  margin-bottom: 1.25rem;
+  width: 100%;
+  font-size: 1.1rem;
+  font-weight: 700;
+  text-align: center;
+  box-shadow: var(--shadow-sm);
+  transition: all var(--transition-fast);
+}
+
+.status-turn-x {
+  border-color: rgba(99, 102, 241, 0.4);
+  color: var(--color-primary);
+}
+
+.status-turn-o {
+  border-color: rgba(168, 85, 247, 0.4);
+  color: var(--color-purple);
+}
+
+.status-win {
+  border-color: var(--color-success);
+  background-color: rgba(16, 185, 129, 0.12);
+  color: var(--color-success);
+  animation: popIn 0.3s ease-out;
+}
+
+.status-draw {
+  border-color: var(--color-warning);
+  background-color: rgba(245, 158, 11, 0.12);
+  color: var(--color-warning);
+}
+
+/* 3x3 BOARD */
+.ttt-board {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  gap: 0.75rem;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  background-color: var(--bg-surface-elevated);
+  padding: 0.85rem;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border-subtle);
+  box-shadow: var(--shadow-md);
+}
+
+/* CELL BUTTONS */
+.ttt-cell {
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-mono);
+  font-size: 3rem;
+  font-weight: 800;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  user-select: none;
+  position: relative;
+  box-shadow: var(--shadow-sm);
+}
+
+.ttt-cell:hover:not(:disabled) {
+  background-color: var(--bg-card-hover);
+  border-color: var(--border-focus);
+  transform: scale(0.98);
+}
+
+.ttt-cell:disabled {
+  cursor: default;
+}
+
+/* Player symbols */
+.symbol-x {
+  color: var(--color-primary);
+  text-shadow: 0 0 12px rgba(99, 102, 241, 0.35);
+  animation: popIn 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.symbol-o {
+  color: var(--color-purple);
+  text-shadow: 0 0 12px rgba(168, 85, 247, 0.35);
+  animation: popIn 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+/* Winning cell highlight */
+.ttt-cell.cell-winning {
+  background-color: rgba(16, 185, 129, 0.15) !important;
+  border: 2px solid var(--color-success) !important;
+  animation: pulseWin 1.5s infinite ease-in-out;
+}
+
+.ttt-cell.cell-winning .symbol-x,
+.ttt-cell.cell-winning .symbol-o {
+  color: var(--color-success);
+  text-shadow: 0 0 15px rgba(16, 185, 129, 0.7);
+}
+
+/* CONTROLS */
+.ttt-controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 1.5rem;
+  width: 100%;
+}
+
+.ttt-controls .btn {
+  flex: 1;
+}
+
+@media (max-width: 480px) {
+  .ttt-cell {
+    font-size: 2.25rem;
+  }
+  .ttt-board {
+    gap: 0.5rem;
+    padding: 0.6rem;
+  }
+}

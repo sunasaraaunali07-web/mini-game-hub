@@ -1,0 +1,210 @@
+/* =========================================================
+   ROCK PAPER SCISSORS STYLES
+   ========================================================= */
+
+.rps-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 540px;
+  margin: 0 auto;
+}
+
+.rps-round-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.35rem 0.85rem;
+  background-color: var(--badge-bg);
+  color: var(--badge-text);
+  border-radius: var(--radius-full);
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.75rem;
+}
+
+/* SECTION PROMPT */
+.rps-prompt-text {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--text-main);
+  margin-bottom: 1.25rem;
+  text-align: center;
+}
+
+/* MOVE BUTTONS */
+.rps-moves-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  width: 100%;
+  margin-bottom: 2rem;
+}
+
+.rps-move-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  padding: 1.25rem 0.75rem;
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  box-shadow: var(--shadow-sm);
+}
+
+.rps-move-btn:hover:not(:disabled) {
+  transform: translateY(-4px);
+  border-color: var(--border-focus);
+  background-color: var(--bg-card-hover);
+  box-shadow: var(--shadow-md), var(--shadow-glow);
+}
+
+.rps-move-btn:active:not(:disabled) {
+  transform: scale(0.96);
+}
+
+.rps-move-btn.selected {
+  border-color: var(--color-primary);
+  background-color: var(--bg-surface-elevated);
+  box-shadow: 0 0 16px rgba(99, 102, 241, 0.4);
+}
+
+.move-emoji {
+  font-size: 2.75rem;
+  transition: transform var(--transition-fast);
+}
+
+.rps-move-btn:hover .move-emoji {
+  transform: scale(1.15);
+}
+
+.move-name {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--text-main);
+}
+
+/* SHOWDOWN ARENA */
+.rps-arena {
+  width: 100%;
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  padding: 1.75rem 1.25rem;
+  margin-bottom: 1.5rem;
+  box-shadow: var(--shadow-md);
+  text-align: center;
+}
+
+.arena-cards {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.arena-card {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1.25rem 0.75rem;
+  background-color: var(--bg-surface-elevated);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  max-width: 180px;
+}
+
+.arena-card-label {
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: 0.5rem;
+}
+
+.arena-emoji {
+  font-size: 3.5rem;
+  margin-bottom: 0.35rem;
+  animation: popIn 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.arena-card-choice {
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: var(--text-main);
+}
+
+.arena-vs {
+  font-size: 1.25rem;
+  font-weight: 900;
+  font-style: italic;
+  color: var(--text-subtle);
+}
+
+/* RESULT BANNER */
+.rps-result-banner {
+  padding: 0.85rem 1.25rem;
+  border-radius: var(--radius-md);
+  font-size: 1.25rem;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  animation: popIn 0.3s ease-out;
+}
+
+.result-win {
+  background-color: rgba(16, 185, 129, 0.15);
+  border: 1px solid var(--color-success);
+  color: var(--color-success);
+}
+
+.result-lose {
+  background-color: rgba(239, 68, 68, 0.15);
+  border: 1px solid var(--color-danger);
+  color: var(--color-danger);
+}
+
+.result-draw {
+  background-color: rgba(245, 158, 11, 0.15);
+  border: 1px solid var(--color-warning);
+  color: var(--color-warning);
+}
+
+/* CONTROLS */
+.rps-controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  width: 100%;
+}
+
+.rps-controls .btn {
+  flex: 1;
+}
+
+@media (max-width: 480px) {
+  .move-emoji {
+    font-size: 2rem;
+  }
+  .arena-emoji {
+    font-size: 2.75rem;
+  }
+  .arena-cards {
+    gap: 0.5rem;
+  }
+  .arena-card {
+    padding: 0.75rem 0.5rem;
+  }
+}

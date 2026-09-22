@@ -63,36 +63,8 @@ python main.py
 It will automatically:
 1. Verify and build project assets
 2. Start the local server
-3. Open your browser to `http://localhost:8080/`
-4. Show your **Wi-Fi Network URL** so friends and family on your Wi-Fi can play from their phones!
+3. Open your browser to https://mini-game-hub-iota.vercel.app
 
-### Want to share with a friend over the internet?
-Run:
-```bash
-python main.py --share
-```
-This generates an instant, public HTTPS link (e.g. `https://xxxx.loca.lt`) and password that you can send to anyone in the world!
-
----
-
-### Alternative Terminal Commands (Standard npm)
-
-If you prefer standard npm scripts:
-```bash
-# 1. Install dependencies
-npm install
-
-# 2. Run local development server
-npm run dev
-
-# 3. Run automated tests (25 tests)
-npm test
-
-# 4. Build for production
-npm run build
-```
-
----
 
 ## 📁 Project Structure
 
